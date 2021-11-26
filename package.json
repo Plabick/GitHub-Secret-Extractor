@@ -1,0 +1,22 @@
+{
+  "name": "github-actions-secret-leaker",
+  "version": "1.0.0",
+  "description": "A tool to extract secrets from GitHub repositories where you can run workflows",
+  "main": "main.js",
+  "scripts": {
+    "build": "tsc && ncc build dist/main.js",
+    "format": "prettier --write **/*.ts"
+  },
+  "keywords": ["actions","github", "secret"],
+  "author": "Peter Labick",
+  "dependencies": {
+    "@actions/core": "^1.6.0",
+    "@actions/github": "^5.0.0",
+    "@types/node": "^16.11.10"
+  },
+  "devDependencies": {
+    "@vercel/ncc": "^0.32.0",
+    "prettier": "^2.5.0",
+    "typescript": "^4.5.2"
+  }
+}

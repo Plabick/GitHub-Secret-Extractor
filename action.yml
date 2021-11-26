@@ -1,0 +1,12 @@
+name: 'GitHub Secret Leaker'
+description: 'Get plain text encrypted secrets from any repo you can run workflows in'
+branding:
+  icon: 'key'  
+  color: 'orange'
+inputs:
+  secret: 
+    description: 'The GitHub secret to read'
+    required: true
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
