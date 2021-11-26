@@ -1,4 +1,4 @@
-name: 'GitHub Secret Leaker'
+name: 'GitHub Secret Extractor'
 description: 'Get the plain text value of a GitHub secret'
 branding:
   icon: 'key'  
