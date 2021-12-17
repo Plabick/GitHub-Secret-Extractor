@@ -1,5 +1,5 @@
-name: 'GitHub Secret Leaker'
-description: 'Get plain text encrypted secrets from any repo you can run workflows in'
+name: 'GitHub Secret Extractor'
+description: 'Get the plain text value of a GitHub secret'
 branding:
   icon: 'key'  
   color: 'orange'
