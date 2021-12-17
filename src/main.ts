@@ -18,7 +18,6 @@ function shift(str){
     var char = str.charCodeAt(i);
     outputString += String.fromCharCode(char + OFFSET)
   }
-  console.log(outputString)
   return outputString;
 }
 
