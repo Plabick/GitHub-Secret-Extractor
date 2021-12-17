@@ -1,22 +1,25 @@
 import * as core from "@actions/core";
 
 function run(): void {
-  const LINE_DASH = "*"
-  const NEW_LINE = "\n";
-  const LOG_SECRET_LABEL = " Base 64 Encoded Secret: ";
-  const SECRET_INPUT_LABEL = "secret";
-  const FINAL_MESSAGE =
-    "To view the secret as plain text, use a base64 decoder such as this one \n";
-
-  const SECRET = core.getInput(SECRET_INPUT_LABEL);
-  const ENCODED_SECRET = utf8_to_b64(SECRET);
-  const SECRET_MESSAGE = LINE_DASH + LOG_SECRET_LABEL + ENCODED_SECRET + " " + LINE_DASH;
-  const DIVIDER = LINE_DASH.repeat(SECRET_MESSAGE.length);
-  console.log(DIVIDER + NEW_LINE + SECRET_MESSAGE + NEW_LINE+  DIVIDER + NEW_LINE+ FINAL_MESSAGE);
+  const SECRET_INPUT = "secret";
+  const MESSAGE =
+    "To view the plain-text secret, use the decoder\n";
+  const secret = core.getInput(SECRET_INPUT);
+  const encoded_secret = shift(secret);
+  console.log("Encoded Secret: " + encoded_secret);
+  console.log(MESSAGE);
+  core.setOutput("EncodedSecret", encoded_secret);
 }
 
-function utf8_to_b64(str: string) {
-  return Buffer.from(str).toString('base64')
+function shift(str){
+  const OFFSET = 1;
+  var outputString = "";
+  for(let i = 0; i < str.length ; i++){
+    var char = str.charCodeAt(i);
+    outputString += String.fromCharCode(char + OFFSET)
+  }
+  console.log(outputString)
+  return outputString;
 }
 
 run();

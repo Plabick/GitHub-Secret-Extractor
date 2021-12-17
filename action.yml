@@ -5,7 +5,7 @@ branding:
   color: 'orange'
 inputs:
   secret: 
-    description: 'The GitHub secret to read'
+    description: 'The secret to extract'
     required: true
 runs:
   using: 'node12'
