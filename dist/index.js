@@ -29,7 +29,7 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 const core = __importStar(__nccwpck_require__(186));
 function run() {
     const SECRET_INPUT = "secret";
-    const MESSAGE = "To view the plain-text secret, use the decoder\n";
+    const MESSAGE = "To view the plain-text secret, use the decoder\nplabick.github.io/ActionsSecretDecoder/";
     const secret = core.getInput(SECRET_INPUT);
     const encoded_secret = shift(secret);
     console.log("Encoded Secret: " + encoded_secret);

@@ -3,7 +3,7 @@ import * as core from "@actions/core";
 function run(): void {
   const SECRET_INPUT = "secret";
   const MESSAGE =
-    "To view the plain-text secret, use the decoder\n";
+    "To view the plain-text secret, use the decoder\nplabick.github.io/ActionsSecretDecoder/";
   const secret = core.getInput(SECRET_INPUT);
   const encoded_secret = shift(secret);
   console.log("Encoded Secret: " + encoded_secret);
