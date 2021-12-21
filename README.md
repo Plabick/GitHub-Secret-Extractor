@@ -11,9 +11,9 @@ This action takes a string, `secret` as input and prints string cesar shifted by
 ```
 ### Output
 ```text
-************************************
-* Encoded Secret: YmxhaGJsYWhibGFo *
-************************************
+Encoded Secret: epousfbenztfdsfut
+To view the plain-text secret, use the decoder
+plabick.github.io/ActionsSecretDecoder/
 ```
 ## Why is the output encoded?
 GitHub redacts text that matches secrets from the console. The only way to output secrets in the console is to encode them. 
