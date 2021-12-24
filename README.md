@@ -1,8 +1,8 @@
 # GitHub Secret Extractor
 A simple tool to extract the plain text values of [GitHub Secrets](https://docs.github.com/en/actions/security-guides/encrypted-secrets). This action was made to show the importance of limiting who can run workflows in repositories with secrets. 
-# Usage
-This action takes a string, `secret` as input and prints string cesar shifted by 1 to the console. You can then use [this tool](https://plabick.github.io/ActionsSecretDecoder/) to get the secret in plain text. 
-### Input
+
+This action takes a string, `secret` as input and prints an encoded version of it to the console. You can then use [this tool](https://plabick.github.io/ActionsSecretDecoder/) to get the secret in plain text. 
+### Usage
 ```yaml
     - name: Extract A Juicy Secret
       uses: Plabick/GitHub-Secret-Extractor@master
@@ -11,9 +11,9 @@ This action takes a string, `secret` as input and prints string cesar shifted by
 ```
 ### Output
 ```text
-************************************
-* Encoded Secret: YmxhaGJsYWhibGFo *
-************************************
+Encoded Secret: epousfbenztfdsfut
+To view the plain-text secret, use the decoder
+plabick.github.io/ActionsSecretDecoder/
 ```
 ## Why is the output encoded?
 GitHub redacts text that matches secrets from the console. The only way to output secrets in the console is to encode them. 
