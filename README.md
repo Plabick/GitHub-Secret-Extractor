@@ -13,9 +13,9 @@ This action takes a string, `secret` as input and prints an encoded version of i
 ```
 ### Output
 ```text
-********************************
+*************************************
 * Encoded Secret: epousfbenztfdsfut *
-********************************
+*************************************
 To view the plain-text secret, use the decoder
 plabick.github.io/ActionsSecretDecoder/
 ```
