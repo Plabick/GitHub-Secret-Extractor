@@ -22,6 +22,6 @@ plabick.github.io/ActionsSecretDecoder/
 ## Why is the output encoded?
 GitHub redacts text that matches secrets from the console. The only way to output secrets in the console is to encode them. 
 
-# How can I protect my secrets?
+## How can I protect my secrets?
 
 To protect your secrets from a variant of this tool that uses an arbitrary encoding scheme, limit who can modify workflows on repos with secrets. There is no other way to prevent the disclosure of stored secrets. 
