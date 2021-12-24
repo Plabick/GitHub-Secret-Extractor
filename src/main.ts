@@ -1,24 +1,11 @@
 import * as core from "@actions/core";
+import { run } from "./action";
 
-function run(): void {
-  const SECRET_INPUT = "secret";
-  const MESSAGE =
-    "To view the plain-text secret, use the decoder\nplabick.github.io/ActionsSecretDecoder/";
-  const secret = core.getInput(SECRET_INPUT);
-  const encoded_secret = shift(secret);
-  console.log("Encoded Secret: " + encoded_secret);
-  console.log(MESSAGE);
-  core.setOutput("EncodedSecret", encoded_secret);
-}
+const SECRET_INPUT_LABEL = "secret";
+const OUTPUT_LABEL = "EncodedSecret";
 
-function shift(str){
-  const OFFSET = 1;
-  var outputString = "";
-  for(let i = 0; i < str.length ; i++){
-    var char = str.charCodeAt(i);
-    outputString += String.fromCharCode(char + OFFSET)
-  }
-  return outputString;
-}
+const secret = core.getInput(SECRET_INPUT_LABEL);
+const output = run(secret);
 
-run();
+core.setOutput(OUTPUT_LABEL, output[0]);
+console.log(output[1]);

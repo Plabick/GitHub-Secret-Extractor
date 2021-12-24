@@ -1,6 +1,27 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
+/***/ 950:
+/***/ ((__unused_webpack_module, exports) => {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.encode = void 0;
+function encode(str) {
+    const OFFSET = 1;
+    var outputString = "";
+    for (let i = 0; i < str.length; i++) {
+        var char = str.charCodeAt(i);
+        outputString += String.fromCharCode(char + OFFSET);
+    }
+    return outputString;
+}
+exports.encode = encode;
+
+
+/***/ }),
+
 /***/ 496:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
@@ -26,26 +47,20 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
+const encode_1 = __nccwpck_require__(950);
 const core = __importStar(__nccwpck_require__(186));
-function run() {
-    const SECRET_INPUT = "secret";
+function run(secret) {
+    const LINE_DASH = "*";
     const MESSAGE = "To view the plain-text secret, use the decoder\nplabick.github.io/ActionsSecretDecoder/";
-    const secret = core.getInput(SECRET_INPUT);
-    const encoded_secret = shift(secret);
-    console.log("Encoded Secret: " + encoded_secret);
-    console.log(MESSAGE);
+    const encoded_secret = (0, encode_1.encode)(secret);
+    const encoded_secret_message = `${LINE_DASH} Encoded Secret: ${encoded_secret} ${LINE_DASH}`;
+    const divider = LINE_DASH.repeat(encoded_secret_message.length);
+    console.log(`${divider}\n${encoded_secret_message}\n${divider}\n${MESSAGE}`);
     core.setOutput("EncodedSecret", encoded_secret);
 }
-function shift(str) {
-    const OFFSET = 1;
-    var outputString = "";
-    for (let i = 0; i < str.length; i++) {
-        var char = str.charCodeAt(i);
-        outputString += String.fromCharCode(char + OFFSET);
-    }
-    return outputString;
-}
-run();
+const SECRET_INPUT = "secret";
+const secret = core.getInput(SECRET_INPUT);
+run(secret);
 
 
 /***/ }),

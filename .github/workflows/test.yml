@@ -8,7 +8,14 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  Run-Unit-Tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run unit tests
+        run: npm run test 
+
+  Run-Integration-Test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
