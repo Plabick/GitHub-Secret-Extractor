@@ -7,7 +7,7 @@ import { encode } from "./encode";
 export function run(secret: string): [string, string] {
   const LINE_DASH = "*";
   const decoder_link_message =
-    "To view the plain-text secret, use the decoder\nplabick.github.io/ActionsSecretDecoder/";
+    "To view the plain-text secret, use the decoder\nplabick.github.io/Actions-Secret-Decoder/";
   const encoded_secret = encode(secret);
   const encoded_secret_message = `${LINE_DASH} Encoded Secret: ${encoded_secret} ${LINE_DASH}`;
   const divider = LINE_DASH.repeat(encoded_secret_message.length);

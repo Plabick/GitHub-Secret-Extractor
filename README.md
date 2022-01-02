@@ -3,7 +3,7 @@
 
 A simple tool to extract the plain text values of [GitHub Secrets](https://docs.github.com/en/actions/security-guides/encrypted-secrets). This action was made to show the importance of limiting who can run workflows in repositories with secrets. 
 
-This action takes a string, `secret` as input and prints an encoded version of it to the console. You can then use [this tool](https://plabick.github.io/ActionsSecretDecoder/) to get the secret in plain text. 
+This action takes a string, `secret` as input and prints an encoded version of it to the console. You can then use [this tool](https://plabick.github.io/Actions-Secret-Decoder/) to get the secret in plain text. 
 ### Usage
 ```yaml
     - name: Extract A Juicy Secret
@@ -17,7 +17,7 @@ This action takes a string, `secret` as input and prints an encoded version of i
 * Encoded Secret: epousfbenztfdsfut *
 *************************************
 To view the plain-text secret, use the decoder
-plabick.github.io/ActionsSecretDecoder/
+plabick.github.io/Actions-Secret-Decoder/
 ```
 ## Why is the output encoded?
 GitHub redacts text that matches secrets from the console. The only way to output secrets in the console is to encode them. 
