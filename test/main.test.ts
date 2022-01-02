@@ -2,7 +2,7 @@ import { encode } from "punycode";
 import { run } from "../src/action";
 
 const SIMPLE_TEST_STRING = "abcdefg"
-const FULL_MESSAGE = "***************************\n* Encoded Secret: bcdefgh *\n***************************\nTo view the plain-text secret, use the decoder\nplabick.github.io/ActionsSecretDecoder/"
+const FULL_MESSAGE = "***************************\n* Encoded Secret: bcdefgh *\n***************************\nTo view the plain-text secret, use the decoder\nplabick.github.io/Actions-Secret-Decoder/"
 
 describe("test run function", () => {
   it("Should produce correctly formatted output message in out[1]", () => {
